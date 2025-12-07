@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Haiti Sport Network — NVK
+{% endblock %}
+
+{% block slide %}{% endblock %}
+
+{% block body %}
+
+	{% include "_include/slide.php" %}
+
+	<div
+		class="container my-5">
+
+		{# Cartes compétitions #}
+		<div class="row g-4 mb-5">
+			<div class="col-12 col-md-4">
+				<div class="card h-100">
+					<img src="{{ asset('assets/img/home/ht_card.jpg') }}" class="card-img-top" alt="HT Card">
+					<div class="card-body">
+						<h5 class="card-title">Championnat Haïtien</h5>
+						<p class="card-text">Retrouvez les résultats et les derniers matchs du championnat haïtien.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12 col-md-4">
+				<div class="card h-100">
+					<img src="{{ asset('assets/img/home/ligue_ht.png') }}" class="card-img-top" alt="Ligue HT">
+					<div class="card-body">
+						<h5 class="card-title">Ligue Haïtienne</h5>
+						<p class="card-text">Découvrez les clubs participants et les classements officiels.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12 col-md-4">
+				<div class="card h-100">
+					<img src="{{ asset('assets/img/home/sportif_ht.jpg') }}" class="card-img-top" alt="Sportif HT">
+					<div class="card-body">
+						<h5 class="card-title">Sportifs</h5>
+						<p class="card-text">Les profils des meilleurs sportifs haïtiens et leurs performances.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{# Vidéo du jour #}
+		<section class="mb-5">
+			<div class="row g-4 align-items-center">
+				<div class="col-12 col-lg-6">
+					<div class="ratio ratio-16x9">
+						<video src="{{ asset('assets/video/video_du_jour.mp4') }}" controls poster="{{ asset('assets/img/video_thumbnail.jpg') }}"></video>
+					</div>
+				</div>
+
+				<div class="col-12 col-lg-6">
+					<h3>Vidéo du Jour : Match de la Ligue Haïtienne</h3>
+					<p>Revivez les meilleurs moments du match entre le Club A et le Club B avec des actions incroyables et des buts mémorables.</p>
+					<div class="d-flex flex-wrap align-items-center gap-3">
+						<span class="text-muted">Publié le 1er Décembre 2025</span>
+						<span class="d-flex gap-2">
+							<a href="#" class="btn btn-sm btn-outline-primary">F</a>
+							<a href="#" class="btn btn-sm btn-outline-info">T</a>
+							<a href="#" class="btn btn-sm btn-outline-danger">I</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		{# Slider / liste joueurs #}
+		<section class="my-5">
+			<h2 class="mb-4">Nos Sportifs</h2>
+			<div class="row g-4">
+
+				<div class="col-12 col-md-4">
+					<div class="card h-100">
+						<img src="{{ asset('assets/img/home/player_placeholder.jpg') }}" class="card-img-top" alt="Joueur 1">
+						<div class="card-body">
+							<h5 class="card-title">Joueur 1</h5>
+							<p class="card-text mb-2">Poste : Défenseur</p>
+							<a href="#" class="btn btn-sm btn-primary">Voir le profil</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-md-4">
+					<div class="card h-100">
+						<img src="{{ asset('assets/img/home/player_placeholder.jpg') }}" class="card-img-top" alt="Joueur 2">
+						<div class="card-body">
+							<h5 class="card-title">Joueur 2</h5>
+							<p class="card-text mb-2">Poste : Milieu</p>
+							<a href="#" class="btn btn-sm btn-primary">Voir le profil</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-md-4">
+					<div class="card h-100">
+						<img src="{{ asset('assets/img/home/player_placeholder.jpg') }}" class="card-img-top" alt="Joueur 3">
+						<div class="card-body">
+							<h5 class="card-title">Joueur 3</h5>
+							<p class="card-text mb-2">Poste : Attaquant</p>
+							<a href="#" class="btn btn-sm btn-primary">Voir le profil</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		{# Formulaire #}
+		<div class="row my-5">
+			<div class="col-12 col-md-8 col-lg-6">
+				{{ form(form) }}
+				</div>
+			</div>
+
+		</div>
+
+	{% endblock %}

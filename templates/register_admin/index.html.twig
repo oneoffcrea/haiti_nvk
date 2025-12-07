@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<div class="container mt-5">
+		<div class="row justify-content-center">
+			<div class="col-md-8 text-center">
+
+				<div class="jumbotron jumbotron-fluid">
+					<div class="container">
+						<h1 class="display-4">Creation Compte</h1>
+						<p class="lead">Création de compte administrateur</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<div class="row justify-content-center mt-5">
+			<div class="col-md-4">
+
+				<div
+					class="bg-secondary rounded p-4 shadow">
+
+					{# Flash messages Bootstrap #}
+					{% for label, messages in app.flashes %}
+						{% for message in messages %}
+							<div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+								{{ message }}
+								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+							</div>
+						{% endfor %}
+					{% endfor %}
+
+					{{ form_start(formRender) }}
+					{{ form_errors(formRender) }}
+
+					{# EMAIL #}
+					<div class="mb-3">
+						{{ form_label(formRender.email, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+						{{ form_widget(formRender.email, {'attr': {'class': 'form-control'}}) }}
+						{{ form_errors(formRender.email) }}
+					</div>
+
+					{# PASSWORD FIRST #}
+					<div class="mb-3">
+						{{ form_label(formRender.password.first, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+						{{ form_widget(formRender.password.first, {'attr': {'class': 'form-control'}}) }}
+						{{ form_errors(formRender.password.first) }}
+					</div>
+
+					{# PASSWORD CONFIRMATION #}
+					<div class="mb-3">
+						{{ form_label(formRender.password.second, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+						{{ form_widget(formRender.password.second, {'attr': {'class': 'form-control'}}) }}
+						{{ form_errors(formRender.password.second) }}
+					</div>
+
+					{{ form_rest(formRender) }}
+
+					<button type="submit" class="btn btn-dark w-100 mt-3">Se connecter</button>
+
+					{{ form_end(formRender) }}
+
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+
+{% endblock %}

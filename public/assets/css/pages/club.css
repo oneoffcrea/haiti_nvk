@@ -1,0 +1,53 @@
+/* Slider joueurs et cards */
+.joueur_nvk_card img {
+    width: 100%;
+    height: 220px;
+    /* hauteur uniforme */
+    object-fit: cover;
+    display: block;
+}
+
+/* Fiche joueur */
+.joueur_nvk_detail_card img {
+    width: 100%;
+    height: 300px;
+    /* ajustable selon la mise en page */
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Mini galerie responsive */
+.joueur_nvk_gallery .gallery_card img {
+    width: 100%;
+    height: 180px;
+    /* hauteur uniforme */
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Option responsive pour galerie */
+@media (max-width: 1200px) {
+    .joueur_nvk_gallery .gallery_card img {
+        height: 160px;
+    }
+}
+
+@media (max-width: 992px) {
+    .joueur_nvk_gallery .gallery_card img {
+        height: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .joueur_nvk_gallery .gallery_card img {
+        height: 120px;
+    }
+}
+
+@media (max-width: 576px) {
+    .joueur_nvk_gallery .gallery_card img {
+        height: 100px;
+    }
+}

@@ -1,0 +1,188 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Club — Haiti Sport Network
+{% endblock %}
+
+{% block body %}
+
+	<div class="container-fluid my-5 club_page_nvk">
+
+		<div
+			class="row">
+
+			<!-- ====================== COLONNE 1 ====================== -->
+			<div
+				class="col-lg-8 col-12 mb-4">
+
+				<!-- === BANNIÈRE DU CLUB === -->
+				<div class="row mb-4">
+					<div class="col-12">
+						<div class="club_banner_nvk">
+							<img src="" alt="Bannière du club">
+						</div>
+					</div>
+				</div>
+
+				<!-- === PROFIL DU CLUB === -->
+				<div class="row mb-4">
+					<div class="col-12">
+						<div class="club_profile_card_nvk p-4">
+
+							<h3 class="mb-3">Profil du Club</h3>
+
+							<p>
+								<strong>Nom du club :</strong>
+								<!-- Club name -->
+							</p>
+							<p>
+								<strong>Date de création :</strong>
+								<!-- Date -->
+							</p>
+							<p>
+								<strong>Catégorie :</strong>
+								<!-- Football, Handball etc. -->
+							</p>
+							<p>
+								<strong>Localisation :</strong>
+								<!-- Ville, Adresse -->
+							</p>
+							<p>
+								<strong>Description :</strong>
+								Le club est reconnu pour son engagement dans le développement sportif en Haïti.</p>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- === PARTENARIATS === -->
+				<div class="row mb-4">
+					<h3 class="text-white mb-3">Partenariats</h3>
+
+					<div class="col-md-4 col-6 mb-3">
+						<div class="club_partner_card_nvk p-3 text-center">
+							<img src="" alt="Logo partenaire" class="partner_img_nvk">
+							<p class="mt-2">Nom partenaire</p>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-6 mb-3">
+						<div class="club_partner_card_nvk p-3 text-center">
+							<img src="" alt="Logo partenaire" class="partner_img_nvk">
+							<p class="mt-2">Nom partenaire</p>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-6 mb-3">
+						<div class="club_partner_card_nvk p-3 text-center">
+							<img src="" alt="Logo partenaire" class="partner_img_nvk">
+							<p class="mt-2">Nom partenaire</p>
+						</div>
+					</div>
+
+				</div>
+				<!-- === FIN PARTENARIATS === -->
+
+				<!-- === GALERIE PHOTO === -->
+				<div class="row">
+					<h3 class="text-white mb-3">Galerie du Club</h3>
+
+					<div class="col-4 mb-3">
+						<div class="club_gallery_card_nvk">
+							<img src="" alt="">
+						</div>
+					</div>
+
+					<div class="col-4 mb-3">
+						<div class="club_gallery_card_nvk">
+							<img src="" alt="">
+						</div>
+					</div>
+
+					<div class="col-4 mb-3">
+						<div class="club_gallery_card_nvk">
+							<img src="" alt="">
+						</div>
+					</div>
+
+					<div class="col-4 mb-3">
+						<div class="club_gallery_card_nvk">
+							<img src="" alt="">
+						</div>
+					</div>
+
+					<div class="col-4 mb-3">
+						<div class="club_gallery_card_nvk">
+							<img src="" alt="">
+						</div>
+					</div>
+
+					<div class="col-4 mb-3">
+						<div class="club_gallery_card_nvk">
+							<img src="" alt="">
+						</div>
+					</div>
+
+				</div>
+				<!-- === FIN GALERIE PHOTO === -->
+
+			</div>
+
+			<!-- ====================== COLONNE 2 ====================== -->
+			<div
+				class="col-lg-4 col-12">
+
+				<!-- === FORMULAIRE DE CONTACT === -->
+				<div class="row mb-4">
+					<div class="col-12">
+						<div class="club_contact_card_nvk p-4">
+
+							<h3 class="mb-3">Contactez le club</h3>
+
+							<form>
+
+								<label class="form-label">Nom</label>
+								<input type="text" class="form-control mb-3">
+
+								<label class="form-label">Prénom</label>
+								<input type="text" class="form-control mb-3">
+
+								<label class="form-label">Téléphone</label>
+								<input type="text" class="form-control mb-3">
+
+								<label class="form-label">Adresse email</label>
+								<input type="email" class="form-control mb-3">
+
+								<label class="form-label">Type de demande</label>
+								<select class="form-control mb-3">
+									<option>Demande informations générales</option>
+									<option>Recrutement</option>
+									<option>Emploi</option>
+									<option>Partenariats</option>
+									<option>Don</option>
+								</select>
+
+								<label class="form-label">Objet de la demande</label>
+								<input type="text" class="form-control mb-3">
+
+								<label class="form-label">Votre message</label>
+								<textarea class="form-control mb-3" rows="4"></textarea>
+
+								<label class="form-label">Pièces jointes</label>
+								<input type="file" class="form-control mb-3">
+
+								<button class="btn btn-danger w-100">Envoyer</button>
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+{% endblock %}

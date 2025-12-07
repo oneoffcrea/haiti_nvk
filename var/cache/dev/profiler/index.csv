@@ -1,0 +1,9 @@
+56b0f9,127.0.0.1,GET,http://127.0.0.1:8000/admin,1765148104,,200,request
+2875e4,127.0.0.1,GET,http://127.0.0.1:8000/,1765148107,,200,request
+3461d5,127.0.0.1,GET,http://127.0.0.1:8000/assets/img/home/sportif_ht.jpg,1765148107,5d3a74,404,request
+5d3a74,127.0.0.1,GET,http://127.0.0.1:8000/assets/img/home/sportif_ht.jpg,1765148107,,404,request
+ae9da8,127.0.0.1,GET,http://127.0.0.1:8000/assets/video/video_du_jour.mp4,1765148107,851fd4,404,request
+851fd4,127.0.0.1,GET,http://127.0.0.1:8000/assets/video/video_du_jour.mp4,1765148107,,404,request
+871b0b,127.0.0.1,GET,http://127.0.0.1:8000/assets/img/video_thumbnail.jpg,1765148108,e34a4a,404,request
+e34a4a,127.0.0.1,GET,http://127.0.0.1:8000/assets/img/video_thumbnail.jpg,1765148108,,404,request
+9f0357,127.0.0.1,GET,http://127.0.0.1:8000/club,1765148108,,200,request
