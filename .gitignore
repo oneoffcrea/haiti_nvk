@@ -9,4 +9,5 @@
 *.zip
 /vendor/
 *.zip
+/var/cache/
 ###< symfony/framework-bundle ###
