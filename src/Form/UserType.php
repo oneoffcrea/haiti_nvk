@@ -14,13 +14,13 @@ class UserType extends AbstractType
     {
         $builder
             ->add('email')
-            ->add('password')
-            ->add('role')
-            ->add('dateCreation', null, [
-                'widget' => 'single_text',
-            ])
+            ->add('password');
+        // ->add('role')
+        // ->add('dateCreation', null, [
+        //     'widget' => 'single_text',
+        // ])
 
-            ->add('submit', SubmitType::class);;
+        // ->add('submit', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
