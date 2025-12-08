@@ -14,7 +14,7 @@ class ControllerResolverConfig
     private $autoMapping;
     private $evictCache;
     private $_usedProperties = [];
-    
+
     /**
      * @default true
      * @param ParamConfigurator|bool $value
@@ -24,25 +24,24 @@ class ControllerResolverConfig
     {
         $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
-    
+
         return $this;
     }
-    
+
     /**
-     * Set to true to enable using route placeholders as lookup criteria when the primary key doesn't match the argument name
-     * @default false
+     * Set to false to disable using route placeholders as lookup criteria when the primary key doesn't match the argument name
+     * @default null
      * @param ParamConfigurator|bool $value
-     * @deprecated The "auto_mapping" option is deprecated and will be removed in DoctrineBundle 4.0, as it only accepts `false` since 3.0.
      * @return $this
      */
     public function autoMapping($value): static
     {
         $this->_usedProperties['autoMapping'] = true;
         $this->autoMapping = $value;
-    
+
         return $this;
     }
-    
+
     /**
      * Set to true to fetch the entity from the database instead of using the cache, if any
      * @default false
@@ -53,10 +52,10 @@ class ControllerResolverConfig
     {
         $this->_usedProperties['evictCache'] = true;
         $this->evictCache = $value;
-    
+
         return $this;
     }
-    
+
     public function __construct(array $value = [])
     {
         if (array_key_exists('enabled', $value)) {
@@ -64,24 +63,24 @@ class ControllerResolverConfig
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
-    
+
         if (array_key_exists('auto_mapping', $value)) {
             $this->_usedProperties['autoMapping'] = true;
             $this->autoMapping = $value['auto_mapping'];
             unset($value['auto_mapping']);
         }
-    
+
         if (array_key_exists('evict_cache', $value)) {
             $this->_usedProperties['evictCache'] = true;
             $this->evictCache = $value['evict_cache'];
             unset($value['evict_cache']);
         }
-    
+
         if ([] !== $value) {
             throw new InvalidConfigurationException(sprintf('The following keys are not supported by "%s": ', __CLASS__).implode(', ', array_keys($value)));
         }
     }
-    
+
     public function toArray(): array
     {
         $output = [];
@@ -94,7 +93,7 @@ class ControllerResolverConfig
         if (isset($this->_usedProperties['evictCache'])) {
             $output['evict_cache'] = $this->evictCache;
         }
-    
+
         return $output;
     }
 

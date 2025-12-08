@@ -65,7 +65,10 @@ class __TwigTemplate_39b8ed30e8e74daaf37178a8e62254e5 extends Template
 
             <!-- MENU CENTRÉ -->
             <ul class=\"navbar-nav mx-auto text-center\">
-                <li class=\"nav-item\"><a class=\"nav-link active text-white\" href=\"#\">Home</a></li>
+                <li class=\"nav-item\"><a class=\"nav-link active text-white\" href=\"";
+        // line 21
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\">Home</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link text-white\" href=\"";
         // line 22
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
@@ -82,30 +85,48 @@ class __TwigTemplate_39b8ed30e8e74daaf37178a8e62254e5 extends Template
             </ul>
 
             <!-- BOUTONS A DROITE -->
-            <div class=\"d-flex gap-2\">
-                <a class=\"btn btn-outline-light\" href=\"#\">Espace Pro</a>
+            <div class=\"d-flex gap-2 d-none d-md-flex\">
+
 
                 ";
         // line 32
-        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 32, $this->source); })()), "user", [], "any", false, false, false, 32)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+        if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
             // line 33
             yield "                ";
             // line 34
+            yield "                <a class=\"btn\" style=\"background-color: #2a2828ff; color: white;\" href=\"";
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin");
+            yield "\">Profil Admin</a>
+                <a class=\"btn\" style=\"background-color: #c3b4b4ff; color: white;\" href=\"";
+            // line 35
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            yield "\">Se déconnecter</a>
+
+                ";
+        } elseif ((($tmp =  !(null === CoreExtension::getAttribute($this->env, $this->source,         // line 37
+(isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 37, $this->source); })()), "user", [], "any", false, false, false, 37))) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 38
+            yield "                ";
+            // line 39
             yield "                <a class=\"btn\" style=\"background-color: #dc3545; color: white;\" href=\"";
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             yield "\">Se déconnecter</a>
+
                 ";
         } else {
-            // line 36
+            // line 42
             yield "                ";
-            // line 37
-            yield "                <a class=\"btn\" style=\"background-color: #35dca7ff; color: white;\" href=\"";
+            // line 43
+            yield "                <a class=\"btn btn-outline-light\" href=\"#\">Demende réferencement</a>
+                <a class=\"btn\" style=\"background-color: #35dca7ff; color: white;\" href=\"";
+            // line 44
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             yield "\">Se connecter</a>
                 ";
         }
-        // line 39
-        yield "            </div>
+        // line 46
+        yield "
+            </div>
 
 
         </div>
@@ -141,7 +162,7 @@ class __TwigTemplate_39b8ed30e8e74daaf37178a8e62254e5 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  108 => 39,  102 => 37,  100 => 36,  94 => 34,  92 => 33,  90 => 32,  79 => 24,  75 => 23,  71 => 22,  48 => 1,);
+        return array (  128 => 46,  123 => 44,  120 => 43,  118 => 42,  111 => 39,  109 => 38,  107 => 37,  102 => 35,  97 => 34,  95 => 33,  93 => 32,  82 => 24,  78 => 23,  74 => 22,  70 => 21,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -166,7 +187,7 @@ class __TwigTemplate_39b8ed30e8e74daaf37178a8e62254e5 extends Template
 
             <!-- MENU CENTRÉ -->
             <ul class=\"navbar-nav mx-auto text-center\">
-                <li class=\"nav-item\"><a class=\"nav-link active text-white\" href=\"#\">Home</a></li>
+                <li class=\"nav-item\"><a class=\"nav-link active text-white\" href=\"{{ path('app_home') }}\">Home</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link text-white\" href=\"{{ path('app_home') }}\">Actualité</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link text-white\" href=\"{{ path('app_club') }}\">Club</a></li>
                 <li class=\"nav-item\"><a class=\"nav-link text-white\" href=\"{{ path('app_sportif') }}\">Sportif</a></li>
@@ -174,16 +195,24 @@ class __TwigTemplate_39b8ed30e8e74daaf37178a8e62254e5 extends Template
             </ul>
 
             <!-- BOUTONS A DROITE -->
-            <div class=\"d-flex gap-2\">
-                <a class=\"btn btn-outline-light\" href=\"#\">Espace Pro</a>
+            <div class=\"d-flex gap-2 d-none d-md-flex\">
 
-                {% if app.user %}
-                {# Utilisateur connecté → bouton Déconnexion #}
+
+                {% if is_granted('ROLE_ADMIN') %}
+                {# Utilisateur admin connecté #}
+                <a class=\"btn\" style=\"background-color: #2a2828ff; color: white;\" href=\"{{ path('app_admin') }}\">Profil Admin</a>
+                <a class=\"btn\" style=\"background-color: #c3b4b4ff; color: white;\" href=\"{{ path('app_logout') }}\">Se déconnecter</a>
+
+                {% elseif app.user is not null %}
+                {# Utilisateur normal connecté #}
                 <a class=\"btn\" style=\"background-color: #dc3545; color: white;\" href=\"{{ path('app_logout') }}\">Se déconnecter</a>
+
                 {% else %}
-                {# Aucun utilisateur → bouton Connexion #}
+                {# Aucun utilisateur connecté #}
+                <a class=\"btn btn-outline-light\" href=\"#\">Demende réferencement</a>
                 <a class=\"btn\" style=\"background-color: #35dca7ff; color: white;\" href=\"{{ path('app_login') }}\">Se connecter</a>
                 {% endif %}
+
             </div>
 
 

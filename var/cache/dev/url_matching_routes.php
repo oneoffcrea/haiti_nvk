@@ -23,6 +23,7 @@ return [
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\RegisterController::logout'], null, null, null, false, false, null]],
         '/sportif' => [[['_route' => 'app_sportif', '_controller' => 'App\\Controller\\SportifController::index'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'app_admin', '_controller' => 'App\\Controller\\admin\\AdminController::index'], null, null, null, false, false, null]],
+        '/admin_profil' => [[['_route' => 'app_admin_profil', '_controller' => 'App\\Controller\\admin\\AdminController::profil_admin'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

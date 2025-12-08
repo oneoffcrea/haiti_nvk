@@ -26,6 +26,7 @@ return [
     'app_logout' => [[], ['_controller' => 'App\\Controller\\RegisterController::logout'], [], [['text', '/logout']], [], [], []],
     'app_sportif' => [[], ['_controller' => 'App\\Controller\\SportifController::index'], [], [['text', '/sportif']], [], [], []],
     'app_admin' => [[], ['_controller' => 'App\\Controller\\admin\\AdminController::index'], [], [['text', '/admin']], [], [], []],
+    'app_admin_profil' => [[], ['_controller' => 'App\\Controller\\admin\\AdminController::profil_admin'], [], [['text', '/admin_profil']], [], [], []],
     'App\Controller\AdminRegisterController::index' => [[], ['_controller' => 'App\\Controller\\AdminRegisterController::index'], [], [['text', '/login_admin_register']], [], [], []],
     'App\Controller\ClubController::index' => [[], ['_controller' => 'App\\Controller\\ClubController::index'], [], [['text', '/club']], [], [], []],
     'App\Controller\HomeController::index' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
@@ -34,4 +35,5 @@ return [
     'App\Controller\RegisterController::logout' => [[], ['_controller' => 'App\\Controller\\RegisterController::logout'], [], [['text', '/logout']], [], [], []],
     'App\Controller\SportifController::index' => [[], ['_controller' => 'App\\Controller\\SportifController::index'], [], [['text', '/sportif']], [], [], []],
     'App\Controller\admin\AdminController::index' => [[], ['_controller' => 'App\\Controller\\admin\\AdminController::index'], [], [['text', '/admin']], [], [], []],
+    'App\Controller\admin\AdminController::profil_admin' => [[], ['_controller' => 'App\\Controller\\admin\\AdminController::profil_admin'], [], [['text', '/admin_profil']], [], [], []],
 ];

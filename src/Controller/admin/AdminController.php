@@ -32,4 +32,15 @@ final class AdminController extends AbstractController
             'userAdmin' => $data
         ]);
     }
+
+
+    #[Route('/admin_profil', name: 'app_admin_profil')]
+    public function profil_admin(Request $request, UserRepository $UserRepo): Response
+    {
+
+
+
+
+        return $this->render('admin/profil/index.html.twig', []);
+    }
 }

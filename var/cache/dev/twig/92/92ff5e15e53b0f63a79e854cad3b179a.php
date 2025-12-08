@@ -99,21 +99,22 @@ class __TwigTemplate_5d15377db6b9b1082836664c9dc0786e extends Template
 
         // line 7
         yield "\t<div class=\"container\">
-
 \t\t<div class=\"row\">
-\t\t\t<div class=\"col\">
 
-\t\t\t\t<nav class=\"nav\">
-\t\t\t\t\t<a class=\"nav-link active\" href=\"#\">Profil
-\t\t\t\t\t</a>
-\t\t\t\t\t<a class=\"nav-link active\" href=\"#\">Utilisateur</a>
-\t\t\t\t\t<a class=\"nav-link\" href=\"#\">Sportif</a>
-\t\t\t\t\t<a class=\"nav-link\" href=\"#\">Club</a>
-\t\t\t\t\t<a class=\"nav-link\" href=\"#\">Message</a>
-\t\t\t\t</nav>
+\t\t\t<div class=\"col-md-12 col-xl-3 col-sm-12\">
+
+\t\t\t\t";
+        // line 12
+        yield from $this->load("admin/_include/nav.html.twig", 12)->unwrap()->yield($context);
+        // line 13
+        yield "
+
 \t\t\t</div>
 
-\t\t\t<div class=\"col\"></div>
+\t\t\t<div class=\"col-md-6 col-xl-6 col-sm-12\">
+\t\t\t\t<p>jlkdfl</p>
+\t\t\t\t<p></p>
+\t\t\t</div>
 \t\t</div>
 
 \t\t<div>
@@ -148,7 +149,7 @@ class __TwigTemplate_5d15377db6b9b1082836664c9dc0786e extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
+        return array (  110 => 13,  108 => 12,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -160,21 +161,19 @@ class __TwigTemplate_5d15377db6b9b1082836664c9dc0786e extends Template
 
 {% block body %}
 \t<div class=\"container\">
-
 \t\t<div class=\"row\">
-\t\t\t<div class=\"col\">
 
-\t\t\t\t<nav class=\"nav\">
-\t\t\t\t\t<a class=\"nav-link active\" href=\"#\">Profil
-\t\t\t\t\t</a>
-\t\t\t\t\t<a class=\"nav-link active\" href=\"#\">Utilisateur</a>
-\t\t\t\t\t<a class=\"nav-link\" href=\"#\">Sportif</a>
-\t\t\t\t\t<a class=\"nav-link\" href=\"#\">Club</a>
-\t\t\t\t\t<a class=\"nav-link\" href=\"#\">Message</a>
-\t\t\t\t</nav>
+\t\t\t<div class=\"col-md-12 col-xl-3 col-sm-12\">
+
+\t\t\t\t{% include \"admin/_include/nav.html.twig\" %}
+
+
 \t\t\t</div>
 
-\t\t\t<div class=\"col\"></div>
+\t\t\t<div class=\"col-md-6 col-xl-6 col-sm-12\">
+\t\t\t\t<p>jlkdfl</p>
+\t\t\t\t<p></p>
+\t\t\t</div>
 \t\t</div>
 
 \t\t<div>

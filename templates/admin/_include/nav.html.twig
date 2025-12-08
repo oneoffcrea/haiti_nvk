@@ -1,0 +1,27 @@
+<!-- Bouton visible seulement sur mobile -->
+<button class="btn btn-primary w-100 d-md-none " type="button" data-bs-toggle="collapse" data-bs-target="#sidebar">
+	Menu - Administrateur
+</button>
+<div
+	class=" d-flex">
+	<!-- Sidebar -->
+	<nav id="sidebar" class="collapse d-md-block bg-light sidebar w-100 text-center p-3">
+		<ul class="nav flex-column">
+			<li class="nav-item">
+				<a href="{{path('app_admin_profil')}}" class="nav-link active">Profil</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link">Utilisateur</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link">Sportif</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link">Club</a>
+			</li>
+			<li class="nav-item">
+				<a href="#" class="nav-link">Message</a>
+			</li>
+		</ul>
+	</nav>
+</div>

@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administrateur | Haiti sport network
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row g-2">
+
+			<div class="col-md-12 col-xl-2 col-sm-12 align-items-start justify-content-center flex-column">
+
+				{% include "admin/_include/nav.html.twig" %}
+
+
+			</div>
+
+			<div class="col-md-6 col-xl-6 col-sm-12">
+
+				<div class="col-md-12 col-xl-10 col-sm-12 ">
+					<h2>Profil Administrateur</h2>
+
+					<!-- Informations principales -->
+					<ul class="list-group mb-3">
+						<li class="list-group-item">
+							<strong>Nom :</strong>
+							Jean Dupont</li>
+						<li class="list-group-item">
+							<strong>Email :</strong>
+							{{app.user.email}}</li>
+						<li class="list-group-item">
+							<strong>Rôle :</strong>
+							Administrateur</li>
+					</ul>
+
+					<!-- Statistiques ou détails -->
+					<ul class="list-group list-group-horizontal-sm mb-3">
+						<li class="list-group-item text-center flex-fill">
+							<strong>Messages</strong><br>123</li>
+						<li class="list-group-item text-center flex-fill">
+							<strong>Clubs</strong><br>5</li>
+						<li class="list-group-item text-center flex-fill">
+							<strong>Sports</strong><br>3</li>
+					</ul>
+
+					<!-- Activités récentes -->
+					<h5>Activités récentes</h5>
+					<ul class="list-group mb-3">
+						<li class="list-group-item">Connecté le 07/12/2025</li>
+						<li class="list-group-item">A rejoint le club "Football Club"</li>
+						<li class="list-group-item">A modifié son profil</li>
+					</ul>
+
+					<!-- Boutons actions -->
+					<div class="d-flex gap-2">
+						<button class="btn btn-primary">Modifier le profil</button>
+						<button class="btn btn-danger">Supprimer l'utilisateur</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div>
+		{% endblock %}

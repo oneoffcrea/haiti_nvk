@@ -18,7 +18,7 @@
 
             <!-- MENU CENTRÉ -->
             <ul class="navbar-nav mx-auto text-center">
-                <li class="nav-item"><a class="nav-link active text-white" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link active text-white" href="{{ path('app_home') }}">Home</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="{{ path('app_home') }}">Actualité</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="{{ path('app_club') }}">Club</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="{{ path('app_sportif') }}">Sportif</a></li>
@@ -26,16 +26,24 @@
             </ul>
 
             <!-- BOUTONS A DROITE -->
-            <div class="d-flex gap-2">
-                <a class="btn btn-outline-light" href="#">Espace Pro</a>
+            <div class="d-flex gap-2 d-none d-md-flex">
 
-                {% if app.user %}
-                {# Utilisateur connecté → bouton Déconnexion #}
+
+                {% if is_granted('ROLE_ADMIN') %}
+                {# Utilisateur admin connecté #}
+                <a class="btn" style="background-color: #2a2828ff; color: white;" href="{{ path('app_admin') }}">Profil Admin</a>
+                <a class="btn" style="background-color: #c3b4b4ff; color: white;" href="{{ path('app_logout') }}">Se déconnecter</a>
+
+                {% elseif app.user is not null %}
+                {# Utilisateur normal connecté #}
                 <a class="btn" style="background-color: #dc3545; color: white;" href="{{ path('app_logout') }}">Se déconnecter</a>
+
                 {% else %}
-                {# Aucun utilisateur → bouton Connexion #}
+                {# Aucun utilisateur connecté #}
+                <a class="btn btn-outline-light" href="#">Demende réferencement</a>
                 <a class="btn" style="background-color: #35dca7ff; color: white;" href="{{ path('app_login') }}">Se connecter</a>
                 {% endif %}
+
             </div>
 
 
