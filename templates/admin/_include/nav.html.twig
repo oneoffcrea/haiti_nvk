@@ -1,5 +1,5 @@
 <!-- Bouton visible seulement sur mobile -->
-<button class="btn btn-primary w-100 d-md-none " type="button" data-bs-toggle="collapse" data-bs-target="#sidebar">
+<button class="btn btn-secondary w-100 d-md-none " type="button" data-bs-toggle="collapse" data-bs-target="#sidebar">
 	Menu - Administrateur
 </button>
 <div
@@ -8,16 +8,16 @@
 	<nav id="sidebar" class="collapse d-md-block bg-light sidebar w-100 text-center p-3">
 		<ul class="nav flex-column">
 			<li class="nav-item">
-				<a href="{{path('app_admin_profil')}}" class="nav-link active">Profil</a>
+				<a href="{{path('app_admin')}}" class="nav-link active">Profil</a>
 			</li>
 			<li class="nav-item">
 				<a href="{{ path('app_admin_utilisateur')}}" class="nav-link">Utilisateur</a>
 			</li>
 			<li class="nav-item">
-				<a href="#" class="nav-link">Sportif</a>
+				<a href="{{ path('app_admin_sportif')}}" class="nav-link">Sportif</a>
 			</li>
 			<li class="nav-item">
-				<a href="#" class="nav-link">Club</a>
+				<a href="{{ path('app_admin_club')}}" class="nav-link">Club</a>
 			</li>
 			<li class="nav-item">
 				<a href="#" class="nav-link">Message</a>

@@ -8,11 +8,12 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class ClubController extends AbstractController
 {
-    #[Route('/club', name: 'app_club')]
+    #[Route('/admin/club', name: 'app_club')]
     public function index(): Response
     {
-        return $this->render('club/index.html.twig', [
-            'controller_name' => 'ClubController',
-        ]);
+
+
+
+        return $this->render('club/index.html.twig', []);
     }
 }

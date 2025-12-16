@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administrateur | Haiti sport network
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row g-2">
+
+			<div class="col-md-12 col-xl-2 col-sm-12">
+				{% include "admin/_include/nav.html.twig" %}
+			</div>
+
+			<div class="col-lg-8 col-sm-12 col-md-12  text-black mx-lg-3 mx-sm-0 mx-md-3">
+
+				<div class="row bg-dark p-3 mb-2 rounded-3 justify-content-center">
+
+					{% include "admin/club/_include/nav.html.twig" %}
+				</div>
+				<div class="row p-4 bg-body-secondary text-black mb-3">
+					<h1 class="text-dark">Ajouter un club</h1>
+				</div>
+
+				<div class="row row-cols-lg-12 row-cols-md-12 row-cols-sm-12 bg-body-secondary rounded-3">
+					{% for label, messages in app.flashes(['success', 'warning']) %}
+						{% for message in messages %}
+							<div class="flash-{{ label }}">
+								{{ message }}
+							</div>
+						{% endfor %}
+					{% endfor %}
+					<div class="col-md-6 col-xl-6 col-sm-12  p-3 ">
+
+
+						{{ form_start(formClub, {'attr': {'class': 'needs-validation', 'novalidate': 'novalidate'}}) }}
+
+						<div class="mb-3">
+							{{ form_label(formClub.nom, 'Nom du club', {'label_attr': {'class': 'form-label'}}) }}
+							{{ form_widget(formClub.nom, {'attr': {'class': 'form-control'}}) }}
+							{{ form_errors(formClub.nom) }}
+						</div>
+						<div class="mb-3">
+							{{ form_label(formClub.Categorie, 'Catégories', {'label_attr': {'class': 'form-label'}}) }}
+							{{ form_widget(formClub.Categorie, {'attr': {'class': 'form-select', 'multiple': 'multiple'}}) }}
+							{{ form_errors(formClub.Categorie) }}
+						</div>
+
+						<div class="mb-3">
+							{{ form_label(formClub.infos, 'Infos', {'label_attr': {'class': 'form-label'}}) }}
+							{{ form_widget(formClub.infos, {'attr': {'class': 'form-control', 'rows': 3}}) }}
+							{{ form_errors(formClub.infos) }}
+						</div>
+
+						<div class="mb-3">
+							{{ form_label(formClub.fondation, 'Année de fondation', {'label_attr': {'class': 'form-label'}}) }}
+							{{ form_widget(formClub.fondation, {'attr': {'class': 'form-control'}}) }}
+							{{ form_errors(formClub.fondation) }}
+						</div>
+
+						<div class="mb-3">
+							{{ form_label(formClub.statut, 'Statut', {'label_attr': {'class': 'form-label'}}) }}
+							{{ form_widget(formClub.statut, {'attr': {'class': 'form-select'}}) }}
+							{{ form_errors(formClub.statut) }}
+						</div>
+
+						<div class="mb-3">
+							{{ form_label(formClub.couleurs, 'Couleurs', {'label_attr': {'class': 'form-label'}}) }}
+							{{ form_widget(formClub.couleurs, {'attr': {'class': 'form-control'}}) }}
+							{{ form_errors(formClub.couleurs) }}
+						</div>
+
+
+					</div>
+
+					<div class="col-md-6 col-xl-6 col-sm-12 p-3">
+						<div class="mb-3">
+							{{ form_label(formClub.stade, 'Stade', {'label_attr': {'class': 'form-label'}}) }}
+							{{ form_widget(formClub.stade, {'attr': {'class': 'form-control'}}) }}
+							{{ form_errors(formClub.stade) }}
+						</div>
+
+						<div class="mb-3">
+							{{ form_label(formClub.championnat, 'Championnat', {'label_attr': {'class': 'form-label'}}) }}
+							{{ form_widget(formClub.championnat, {'attr': {'class': 'form-control'}}) }}
+							{{ form_errors(formClub.championnat) }}
+						</div>
+
+						<div class="mb-3">
+							{{ form_label(formClub.proprietaire, 'Propriétaire', {'label_attr': {'class': 'form-label'}}) }}
+							{{ form_widget(formClub.proprietaire, {'attr': {'class': 'form-control'}}) }}
+							{{ form_errors(formClub.proprietaire) }}
+						</div>
+
+						<div class="mb-3">
+							{{ form_label(formClub.president, 'Président', {'label_attr': {'class': 'form-label'}}) }}
+							{{ form_widget(formClub.president, {'attr': {'class': 'form-control'}}) }}
+							{{ form_errors(formClub.president) }}
+						</div>
+
+						<div class="mb-3">
+							{{ form_label(formClub.entraineur, 'Entraîneur', {'label_attr': {'class': 'form-label'}}) }}
+							{{ form_widget(formClub.entraineur, {'attr': {'class': 'form-control'}}) }}
+							{{ form_errors(formClub.entraineur) }}
+						</div>
+
+						<div class="mb-3">
+							{{ form_label(formClub.adresse, 'Adresse', {'label_attr': {'class': 'form-label'}}) }}
+							{{ form_widget(formClub.adresse, {'attr': {'class': 'form-control', 'rows': 2}}) }}
+							{{ form_errors(formClub.adresse) }}
+						</div>
+
+						<div class="mb-3">
+							{{ form_label(formClub.website, 'Site web', {'label_attr': {'class': 'form-label'}}) }}
+							{{ form_widget(formClub.website, {'attr': {'class': 'form-control'}}) }}
+							{{ form_errors(formClub.website) }}
+						</div>
+
+
+						<button type="submit" class="btn btn-primary align-content-end">Enregistrer</button>
+
+						{{ form_end(formClub) }}
+					</div>
+				</div>
+
+
+			</div>
+
+		</div>
+
+
+	</div>
+
+	<div>
+	{% endblock %}

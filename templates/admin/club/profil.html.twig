@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administrateur | Haiti sport network
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row g-2">
+
+			<div class="col-md-12 col-xl-2 col-sm-12">
+				{% include "admin/_include/nav.html.twig" %}
+			</div>
+
+			<div class="col-lg-8 col-sm-12 col-md-12  text-black mx-lg-3 mx-sm-0 mx-md-3">
+
+				<div class="row bg-dark p-3 mb-2 rounded-3 justify-content-center">
+
+					{% include "admin/club/_include/nav.html.twig" %}
+				</div>
+				<div class="row">
+
+
+					<div class="card shadow-sm">
+						{# Image du club (à adapter si tu as un champ logo/image) #}
+						{# <img src="{{ asset('uploads/clubs/' ~ profil.logo) }}" class="card-img-top" alt="{{ profil.nom }}"> #}
+
+							<div class="card-body"> <h3 class="card-title mb-1">
+								{{ profil.nom }}
+							</h3>
+
+							<p class="text-muted mb-2">
+								Fondé en
+								{{ profil.fondation }}
+								•
+								{{ profil.statut }}
+							</p>
+
+							{% if profil.infos %}
+								<p class="card-text">
+									{{ profil.infos|slice(0, 180) ~ (profil.infos|length > 180 ? '…') }}
+								</p>
+							{% endif %}
+
+							<ul class="list-group list-group-flush mb-3">
+								{% if profil.championnat %}
+									<li class="list-group-item">
+										<strong>Championnat :</strong>
+										{{ profil.championnat }}
+									</li>
+								{% endif %}
+
+								{% if profil.stade %}
+									<li class="list-group-item">
+										<strong>Stade :</strong>
+										{{ profil.stade }}
+									</li>
+								{% endif %}
+
+								{% if profil.couleurs %}
+									<li class="list-group-item">
+										<strong>Couleurs :</strong>
+										{{ profil.couleurs }}
+									</li>
+								{% endif %}
+
+								{% if profil.proprietaire %}
+									<li class="list-group-item">
+										<strong>Propriétaire :</strong>
+										{{ profil.proprietaire }}
+									</li>
+								{% endif %}
+
+								{% if profil.president %}
+									<li class="list-group-item">
+										<strong>Président :</strong>
+										{{ profil.president }}
+									</li>
+								{% endif %}
+
+								{% if profil.entraineur %}
+									<li class="list-group-item">
+										<strong>Entraîneur :</strong>
+										{{ profil.entraineur }}
+									</li>
+								{% endif %}
+
+								{% if profil.adresse %}
+									<li class="list-group-item">
+										<strong>Adresse :</strong>
+										{{ profil.adresse }}
+									</li>
+								{% endif %}
+							</ul>
+
+							<div class="d-flex justify-content-between align-items-center">
+								{% if profil.website %}
+									<a href="{{ profil.website }}" target="_blank" class="btn btn-sm btn-dark">
+										Site officiel
+									</a>
+								{% endif %}
+
+								{% if profil.dateCreation %}
+									<small class="text-muted">
+										Ajouté le
+										{{ profil.dateCreation|date('d/m/Y') }}
+									</small>
+								{% endif %}
+							</div>
+						</div>
+
+
+					</div>
+
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

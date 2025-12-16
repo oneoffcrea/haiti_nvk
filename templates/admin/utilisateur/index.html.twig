@@ -15,54 +15,84 @@
 
 			<!-- Contenu principal -->
 			<div class="col-md-6 col-xl-6 col-sm-12">
-				<div class="col-md-12 col-xl-10 col-sm-12">
-					<h2>Espace Création Utilisateur</h2>
+
+				<div class="roW">
+
+					<div class="col-md-12 col-xl-10 col-sm-12">
+						<h2>Espace Création Utilisateur</h2>
 
 
-					{# Flash messages Bootstrap #}
-					{% for label, messages in app.flashes %}
-						{% for message in messages %}
-							<div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
-								{{ message }}
-								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-							</div>
+						{# Flash messages Bootstrap #}
+						{% for label, messages in app.flashes %}
+							{% for message in messages %}
+								<div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+									{{ message }}
+									<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+								</div>
+							{% endfor %}
 						{% endfor %}
-					{% endfor %}
 
-					<div class="bg-secondary p-3 rounded">
+						<div class="bg-secondary p-3 rounded">
 
-						{{ form_start(formUserAd) }}
-						{{ form_errors(formUserAd) }}
+							{{ form_start(formUserAd) }}
+							{{ form_errors(formUserAd) }}
 
-						{# EMAIL #}
-						<div class="mb-3">
-							{{ form_label(formUserAd.email, null, {'label_attr': {'class': 'form-label text-white'}}) }}
-							{{ form_widget(formUserAd.email, {'attr': {'class': 'form-control'}}) }}
-							{{ form_errors(formUserAd.email) }}
+							{# EMAIL #}
+							<div class="mb-3">
+								{{ form_label(formUserAd.email, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+								{{ form_widget(formUserAd.email, {'attr': {'class': 'form-control'}}) }}
+								{{ form_errors(formUserAd.email) }}
+							</div>
+
+							{# PASSWORD FIRST #}
+							<div class="mb-3">
+								{{ form_label(formUserAd.password, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+								{{ form_widget(formUserAd.password, {'attr': {'class': 'form-control'}}) }}
+								{{ form_errors(formUserAd.password) }}
+							</div>
+
+
+							{{ form_rest(formUserAd) }}
+
+							<button type="submit" class="btn btn-dark w-50 mt-3">Creation</button>
+
+							{{ form_end(formUserAd) }}
+
+						<!-- Boutons actions -->
+							{# <div class="d-flex gap-2 mt-3">
+																																																																																																							<button class="btn btn-primary">Modifier le profil</button>
+																																																																																																					        <button class="btn btn-danger">Supprimer l'utilisateur</button>
+																																																																																																					  		</div> #}
 						</div>
-
-						{# PASSWORD FIRST #}
-						<div class="mb-3">
-							{{ form_label(formUserAd.password, null, {'label_attr': {'class': 'form-label text-white'}}) }}
-							{{ form_widget(formUserAd.password, {'attr': {'class': 'form-control'}}) }}
-							{{ form_errors(formUserAd.password) }}
-						</div>
-
-
-						{{ form_rest(formUserAd) }}
-
-						<button type="submit" class="btn btn-dark w-50 mt-3">Creation</button>
-
-						{{ form_end(formUserAd) }}
-
-					<!-- Boutons actions -->
-						{# <div class="d-flex gap-2 mt-3">
-																																		<button class="btn btn-primary">Modifier le profil</button>
-																																		<button class="btn btn-danger">Supprimer l'utilisateur</button>
-																																		</div> #}
 					</div>
+
+					<div class="col-md-6 col-xl-6 col-sm-12 m-5 ">
+
+						<div class="d-flex g-2 justify-content-between">
+
+							{% for Alluser  in Allusers %}
+
+								<div class="card">
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">Email :
+											{{ Alluser.email }}</li>
+
+									</ul>
+								</div>
+
+							{%   endfor %}
+
+
+						</div>
+
+					</div>
+
+
 				</div>
+
+
 			</div>
+
 
 		</div>
 	</div>
