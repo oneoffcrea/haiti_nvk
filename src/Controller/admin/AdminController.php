@@ -38,7 +38,7 @@ final class AdminController extends AbstractController
     }
 
 
-    #[Route('/admin_club_categorie', name: 'app_admin_categorie')]
+    #[Route('/admin/admin_club_categorie', name: 'app_admin_categorie')]
     public function profil_admin(Request $request, CategoriesRepository $categories, EntityManagerInterface $entityManager): Response
     {
 
