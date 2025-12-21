@@ -1,4 +1,4 @@
-<div class="infos_header_nvk container-fluid py-2">
+<div class="infos_header_nvk container-fluid py-2 d-sm-none">
     <div class="row align-items-center text-center text-md-start">
 
         <!-- Réseaux sociaux -->
@@ -22,28 +22,4 @@
 
     </div>
 
-    <div class="row">
-        <div class="container">
-
-            <div class="d-flex gap-2 d-md-none">
-
-                {% if is_granted('ROLE_ADMIN') %}
-                {# Utilisateur admin connecté #}
-                <a class="btn" style="background-color: #2a2828ff; color: white;" href="{{ path('app_admin') }}">Profil Admin</a>
-                <a class="btn" style="background-color: #c3b4b4ff; color: white;" href="{{ path('app_logout') }}">Se déconnecter</a>
-
-                {% elseif app.user is not null %}
-                {# Utilisateur normal connecté #}
-                <a class="btn" style="background-color: #dc3545; color: white;" href="{{ path('app_logout') }}">Se déconnecter</a>
-
-                {% else %}
-                {# Aucun utilisateur connecté #}
-                <a class="btn btn-outline-light" href="#">Demende réferencement</a>
-                <a class="btn" style="background-color: #35dca7ff; color: white;" href="{{ path('app_login') }}">Se connecter</a>
-                {% endif %}
-
-            </div>
-        </div>
-
-    </div>
 </div>
