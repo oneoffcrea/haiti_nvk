@@ -147,3 +147,26 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     /* contour léger */
 }
+
+.mobile-bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    /* espace égal entre les items */
+    align-items: center;
+    height: 60px;
+    z-index: 1050;
+    padding: 0;
+}
+
+.mobile-bottom-nav .nav-item i {
+    font-size: 22px;
+}
+
+.mobile-bottom-nav .nav-item span {
+    font-size: 12px;
+}
+
+body {
+    padding-bottom: 70px;
+    /* éviter que le contenu soit caché derrière la barre */
+}

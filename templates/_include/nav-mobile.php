@@ -1,24 +1,19 @@
 {% if app.user %}
-<div class="row d-md-none m-2 justify-content-around fixed-bottom bg-dark w-100 " data-bs-theme="dark">
-    "
-    <nav class="navbar">
-        <a href="{{ path('app_admin_utilisateur_profil', { id: app.user.id }) }}" class="nav-item">
-            <i class="bi bi-person-circle"></i>
-            <span>Profil</span>
-        </a>
+<nav class="mobile-bottom-nav d-md-none fixed-bottom bg-dark text-white">
+    <a href="{{ path('app_admin_utilisateur_profil', { id: app.user.id }) }}" class="nav-item text-center flex-fill">
+        <i class="bi bi-person-circle"></i>
+        <span class="d-block small">Profil</span>
+    </a>
 
-        <a href="#" class="nav-item position-relative">
-            <i class="bi bi-chat-dots"></i>
-            <span>Messages</span>
-            <span class="badge bg-danger rounded-circle position-absolute top-0 start-50 translate-middle p-1">3</span>
-        </a>
+    <a href="#" class="nav-item text-center flex-fill position-relative">
+        <i class="bi bi-chat-dots"></i>
+        <span class="d-block small">Messages</span>
+        <span class="badge bg-danger rounded-circle position-absolute top-0 start-50 translate-middle p-1">3</span>
+    </a>
 
-        <a href="{{ path('app_logout') }}" class="nav-item text-danger">
-            <i class="bi bi-box-arrow-right"></i>
-            <span>Déconnexion</span>
-        </a>
-    </nav>
-</div>
-{% else %}
-<nav class="navbar d-none "></nav>
+    <a href="{{ path('app_logout') }}" class="nav-item text-center flex-fill text-danger">
+        <i class="bi bi-box-arrow-right"></i>
+        <span class="d-block small">Déconnexion</span>
+    </a>
+</nav>
 {% endif %}
