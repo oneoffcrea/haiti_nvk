@@ -27,14 +27,27 @@ final class UtilisateurController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $user->setRole('ROLE_USER');
-            $user->setDateCreation($data);
+            $us = $form->getData();
+            $infos = $us->getNom();
 
-            $entityManager->persist($user);
-            $entityManager->flush();
+            $existe = $userRepository->findOneBy(['nom' => $infos]);
 
-            $this->addFlash('success', ' Creation d\'un nouvelle utilisateur');
-            // return $this->redirectToRoute('app_admin_utilisateur');
+            if (!$existe) {
+
+
+                $user->setRole('ROLE_USER');
+                $user->setDateCreation($data);
+
+                $entityManager->persist($user);
+                $entityManager->flush();
+
+                $this->addFlash('success', ' Creation d\'un nouvelle utilisateur');
+                // return $this->redirectToRoute('app_admin_utilisateur');
+
+            } else {
+
+                $this->addFlash('warning', 'Cette utilisateur exite déja');
+            }
         }
 
 
@@ -45,6 +58,40 @@ final class UtilisateurController extends AbstractController
         return $this->render('admin/utilisateur/index.html.twig', [
             'formUserAd' => $form->createView(),
             'Allusers' => $allUser
+        ]);
+    }
+
+
+
+    #[Route('/admin/utilisateur-show', name: 'app_admin_utilisateur_show')]
+    public function show(UserRepository $userRepository): Response
+    {
+
+        $allUser = $userRepository->findAll();
+        return $this->render('admin/utilisateur/show.html.twig', [
+            'alluser' => $allUser
+
+        ]);
+    }
+
+
+
+    #[Route('/admin/utilisateur-message', name: 'app_admin_utilisateur_message')]
+    public function message(): Response
+    {
+        return $this->render('admin/utilisateur/message.html.twig', []);
+    }
+
+
+
+    #[Route('/admin/utilisateur-profil/{id}', name: 'app_admin_utilisateur_profil')]
+    public function profil(User $user): Response
+    {
+
+        $infos = $user;
+
+        return $this->render('admin/utilisateur/profil.html.twig', [
+            'user' => $infos
         ]);
     }
 }
