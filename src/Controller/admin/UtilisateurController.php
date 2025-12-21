@@ -69,7 +69,7 @@ final class UtilisateurController extends AbstractController
 
         $allUser = $userRepository->findAll();
         return $this->render('admin/utilisateur/show.html.twig', [
-            'alluser' => $allUser
+            'allUsers' => $allUser
 
         ]);
     }

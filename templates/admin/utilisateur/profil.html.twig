@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administrateur | Haiti Sport Network
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div
+			class="row g-2">
+			<!-- Navigation -->
+			<div class="col-md-6 col-xl-2 col-sm-12 align-items-start justify-content-center flex-column">
+				{% include "admin/_include/nav.html.twig" %}
+			</div>
+
+			<!-- Contenu principal -->
+			<div class="col-md-6 col-xl-10 col-sm-12 ">
+
+				<div class="row mb-2">
+
+					{% include "admin/utilisateur/_include/nav.html.twig" %}
+				</div>
+
+
+				<div class="row">
+
+
+					<div class="col-md-12 col-xl-12 col-sm-12">
+
+						<div class="row g-2 my-2 profil">
+
+
+							<div
+								class="card profile-card shadow-sm">
+								<!-- Couverture -->
+								<div class="profile-cover"></div>
+
+								<!-- Avatar -->
+								<div class="profile-avatar text-center">
+									<img src="https://ui-avatars.com/api/?name={{ user.prenom }}+{{ user.nom }}&background=0D6EFD&color=fff&size=128" alt="Avatar" class="rounded-circle">
+								</div>
+
+								<!-- Infos -->
+								<div class="card-body text-center mt-4">
+									<h5 class="mb-0">{{ user.prenom }}
+										{{ user.nom }}</h5>
+									<small class="text-muted">{{ user.email }}</small>
+
+									<hr>
+
+									<div class="text-start">
+										<p class="mb-1">
+											<strong>Nom :</strong>
+											{{ user.nom }}</p>
+										<p class="mb-1">
+											<strong>Prénom :</strong>
+											{{ user.prenom }}</p>
+										<p class="mb-1">
+											<strong>Email :</strong>
+											{{ user.email }}</p>
+									</div>
+								</div>
+
+								<!-- Actions -->
+								<div class="card-footer d-flex gap-2">
+									<a href="{{ path('app_admin_utilisateur_profil', { id: user.id }) }}" class="btn btn-primary flex-fill">
+										Voir profil
+									</a>
+
+									<a href="#" class="btn btn-outline-danger flex-fill">
+										Supprimer
+									</a>
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+
+
+	</div>
+</div>{% endblock %}
