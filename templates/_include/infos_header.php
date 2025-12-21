@@ -1,4 +1,4 @@
-<div class="infos_header_nvk container-fluid py-2 d-sm-none">
+<div class="infos_header_nvk container-fluid py-2 d-none d-md-flex">
     <div class="row align-items-center text-center text-md-start">
 
         <!-- Réseaux sociaux -->
@@ -21,5 +21,4 @@
         </div>
 
     </div>
-
 </div>
