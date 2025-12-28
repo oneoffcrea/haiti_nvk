@@ -23,7 +23,8 @@
         "doctrine/doctrine-migrations-bundle": "^3.6",
         "twig/twig": "^3.22",
         "symfony/form": "7.3.*",
-        "symfony/dotenv": "7.3.*"
+        "symfony/dotenv": "7.3.*",
+        "symfony/mime": "7.3.*"
     },
     "autoload": {
         "psr-4": {

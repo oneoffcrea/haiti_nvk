@@ -1,6 +1,4 @@
-   <div class="row bg-dark">
-
-
+   <div class="col bg-dark">
        <div class="m-2 d-flex gap-2 flex-fill d-md-none">
 
            {% if is_granted('ROLE_ADMIN') %}
@@ -19,6 +17,4 @@
            {% endif %}
 
        </div>
-
-
    </div>

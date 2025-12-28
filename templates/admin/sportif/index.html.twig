@@ -1,0 +1,189 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administrateur | Haiti Sport Network
+{% endblock %}
+
+{% block body %}
+	<div
+		class="container">
+		{# PREMIER LIGNE ROW #}
+		<div
+			class="row g-2">
+
+			{# COLONNE - CONTENU NAVIGATION  #}
+			<div class="col-md-6 col-xl-2 col-sm-12 align-items-start justify-content-center flex-column">
+				{% include "admin/_include/nav.html.twig" %}
+			</div>
+
+			{# COLONNE - 2  CONTENU PRINCIAPAL #}
+			<div
+				class="col-md-6 col-xl-10 col-sm-12 ">
+
+				{# PREMIER LIGNE - NAVBAR #}
+				<div class="row mb-2">
+					{% include "admin/sportif/_include/nav.html.twig" %}
+				</div>
+
+				{# DEUXIEME LIGNE - FORMULAIRE #}
+				<div
+					class="row">
+					{# COLONNE 1 #}
+					<div class="col-md-6 col-xl-6 col-sm-12">
+						{% for label, messages in app.flashes %}
+							{% for message in messages %}
+								<div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+									{{ message }}
+									<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+								</div>
+							{% endfor %}
+						{% endfor %}
+
+						<div class="bg-secondary p-3 rounded">
+
+							{{ form_start(sportif) }}
+							{{ form_errors(sportif) }}
+
+							{# INFOS #}
+							<div class="mb-3">
+								{{ form_label(sportif.infos, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+								{{ form_widget(sportif.infos, {'attr': {'class': 'form-control'}}) }}
+								{{ form_errors(sportif.infos) }}
+							</div>
+							{# NOM #}
+							<div class="mb-3">
+								{{ form_label(sportif.nom, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+								{{ form_widget(sportif.nom, {'attr': {'class': 'form-control'}}) }}
+								{{ form_errors(sportif.nom) }}
+							</div>
+
+							{# PRENOM #}
+							<div class="mb-3">
+								{{ form_label(sportif.prenom, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+								{{ form_widget(sportif.prenom, {'attr': {'class': 'form-control'}}) }}
+								{{ form_errors(sportif.prenom) }}
+							</div>
+
+							{# NAISSANCE #}
+							<div class="mb-3">
+								{{ form_label(sportif.naissance, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+								{{ form_widget(sportif.naissance, {'attr': {'class': 'form-control'}}) }}
+								{{ form_errors(sportif.naissance) }}
+							</div>
+
+							{# AGE #}
+							<div class="mb-3">
+								{{ form_label(sportif.age, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+								{{ form_widget(sportif.age, {'attr': {'class': 'form-control'}}) }}
+								{{ form_errors(sportif.age) }}
+							</div>
+
+
+						</div>
+
+					</div>
+					{# FIN COLONE 1 #}
+
+					{# COLONNE 2 #}
+					<div class="col-md-6 col-xl-6 col-sm-12">
+						<div
+							class="bg-secondary p-3 rounded">
+
+							{# CATEGORIE_AGE #}
+							<div class="mb-3">
+								{{ form_label(sportif.categorie_age, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+								{{ form_widget(sportif.categorie_age, {'attr': {'class': 'form-control'}}) }}
+								{{ form_errors(sportif.categorie_age) }}
+							</div>
+							{# TAILLE #}
+							<div class="mb-3">
+								{{ form_label(sportif.taille, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+								{{ form_widget(sportif.taille, {'attr': {'class': 'form-control'}}) }}
+								{{ form_errors(sportif.taille) }}
+							</div>
+							{# POSTE #}
+							<div class="mb-3">
+								{{ form_label(sportif.poste, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+								{{ form_widget(sportif.poste, {'attr': {'class': 'form-control'}}) }}
+								{{ form_errors(sportif.poste) }}
+							</div>
+							{# PHOTO #}
+							<div class="mb-3">
+								{{ form_label(sportif.photo, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+								{{ form_widget(sportif.photo, {'attr': {'class': 'form-control'}}) }}
+								{{ form_errors(sportif.photo) }}
+							</div>
+							{# CATEGORIE #}
+							<div class="mb-3">
+								{{ form_label(sportif.categorie, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+								{{ form_widget(sportif.categorie, {'attr': {'class': 'form-control'}}) }}
+								{{ form_errors(sportif.categorie) }}
+							</div>
+							{# CLUB #}
+							<div class="mb-3">
+								{{ form_label(sportif.club, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+								{{ form_widget(sportif.club, {'attr': {'class': 'form-control'}}) }}
+								{{ form_errors(sportif.club) }}
+							</div>
+
+
+							{{ form_rest(sportif) }}
+							<button type="submit" class="btn btn-dark w-50 mt-3">Valider</button>
+							{{ form_end(sportif) }}
+						</div>
+
+					</div>
+					{# FIN COLONNE 2 #}
+				</div>
+
+				{# TROISIEME LIGNE - AFFICHAGE SPORTIF #}
+				<div class="row mb-2 mt-3 p-3 bg-light">
+					<div class="col-md-12 p-3 mb-2 bg-dark-subtle text-dark-emphasis">
+						LES DERNIER INSCRIT
+					</div>
+
+					<div class="col-md-6 col-xl-6 col-sm-12">
+
+						<div class="row g-2 my-2 profil">
+
+							{% for Alluser in formSportif %}
+								<div class="col-md-6">
+									<div class="card">
+										<div class="card-header bg-dark text-white text-center">
+											{{ Alluser.club }}
+										</div>
+
+										<img src="{{ asset('/assets/img/photo_sportif/' ~ Alluser.photo)}}">
+
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item">
+												Poste :
+												{{ Alluser.poste }}
+											</li>
+											<li class="list-group-item">
+												Nom :
+												{{ Alluser.nom }}
+											</li>
+											<li class="list-group-item">
+												prenom :
+												{{ Alluser.prenom }}
+											</li>
+										</ul>
+									</div>
+								</div>
+							{% endfor %}
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		{# FIN COLONNE CONTENU PRINCIPALE #}
+
+
+	</div>
+	{# FIN PREMIERE LIGNE ROW #}
+
+</div></div></div>{% endblock %}

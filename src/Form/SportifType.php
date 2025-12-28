@@ -2,17 +2,16 @@
 
 namespace App\Form;
 
-use App\Entity\categories;
-use App\Entity\club;
+use App\Entity\Categories;
+use App\Entity\Club;
 use App\Entity\Sportif;
-use Doctrine\DBAL\Types\DateType;
-use Doctrine\DBAL\Types\IntegerType;
-use Doctrine\DBAL\Types\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
@@ -60,8 +59,7 @@ class SportifType extends AbstractType
                 ],
             ])
 
-            ->add('naissance', DateType::class, [
-                'widget' => 'single_text',
+            ->add('naissance', TextType::class, [
                 'constraints' => [
                     new NotBlank(),
                     new LessThan([
@@ -77,7 +75,7 @@ class SportifType extends AbstractType
                     new Range([
                         'min' => 5,
                         'max' => 100,
-                        'notInRangeMessage' => 'L’âge doit être entre {{ min }} et {{ max }} ans',
+                        'notInRangeMessage' => 'L’âge doit être entre {{ min }} etphp -m | grep fileinfo {{ max }} ans',
                     ]),
                 ],
             ])
@@ -129,18 +127,18 @@ class SportifType extends AbstractType
                             'image/png',
                             'image/webp',
                         ],
-                        'mimeTypesMessage' => 'Format d’image invalide',
+                        'mimeTypesMessage' => 'Veuillez envoyer une image valide (JPG, PNG, WEBP).',
                     ]),
                 ],
             ])
             ->add('categorie', EntityType::class, [
                 'class' => categories::class,
-                'choice_label' => 'id',
+                'choice_label' => 'categories',
                 'multiple' => true,
             ])
             ->add('club', EntityType::class, [
                 'class' => club::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom',
             ])
         ;
     }

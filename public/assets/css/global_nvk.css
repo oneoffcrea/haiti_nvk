@@ -1,22 +1,27 @@
 html,
 body {
-    margin: 0;
-    padding: 0;
     width: 100%;
     min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
     background: #0d0d0d;
-    /* fond sombre moderne, pas trop noir */
     color: #f0f0f0;
-    /* texte clair pour contraste */
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
-    /* taille de base lisible */
     line-height: 1.6;
-    /* espacement confortable */
     scroll-behavior: smooth;
-    /* scroll fluide pour ancre */
-
 }
+
+
+.container,
+.container-fluid {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 
 /* liens généraux */
 a {
@@ -54,13 +59,15 @@ p {
     /* padding: 2%; */
     width: 100%;
     max-width: 1800px;
-    margin: 0 auto 5vh auto;
+    /* margin: 0 auto 5vh auto; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
     /* espace moderne entre les cards */
 }
+
+
 
 .home_card_nvk {
     display: flex;
@@ -358,6 +365,20 @@ p {
     .video-meta {
         justify-content: center;
     }
+}
+
+@media(max-width : 690px) {
+
+    .section_nvk .container {
+        padding: 0;
+    }
+
+    .slide_nvk,
+    .section_nvk {
+        width: 100%;
+        max-width: 100%;
+    }
+
 }
 
 /*  ------------- FIN  ESPACE VIDEO  ---------- */

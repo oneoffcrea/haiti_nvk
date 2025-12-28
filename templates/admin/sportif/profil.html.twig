@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administrateur - Sportif | Haiti Sport Network
+{% endblock %}
+
+{% block body %}
+	<div
+		class="container">
+		<!-- PREMIERE DIV ROW  -->
+		<div
+			class="row g-2 mb-5">
+
+
+			<!-- CONTENU-1 NAVIGATION -->
+			<div class="col-md-5 col-xl-2 col-sm-12 align-items-start justify-content-center flex-column">
+				{% include "admin/_include/nav.html.twig" %}
+			</div>
+			<!-- CONTENU-1 NAVIGATION -->
+
+
+			<!-- CONTENU-2 PRINCIPAL CENTRAL -->
+			<div
+				class="col-md-6 col-xl-10 col-sm-12 ">
+				{# CONTAINER-FLUIDE #}
+				<div
+					class="container-fluid">
+
+					{# PREMIERE LIGNE DE ROW  #}
+					<div class="row mb-2">
+						{% include "admin/sportif/_include/nav.html.twig" %}
+					</div>
+					{# FIN PREMIRE LIGNE DE ROW #}
+
+					{# DEUXIEME LIGNE DE ROW  #}
+					<div
+						class="row g-4">
+
+						{# PARTIE CARD : PHOTO ET INFOS #}
+						<div class="col-12 col-xl-3 bg-primary">
+							<div class="card h-100">
+								<img src="{{ asset('/assets/img/photo_sportif/' ~ sportif.photo )}}" class="card-img-top" alt="Photo du sportif">
+								<div class="card-body">
+									<h5 class="card-title">{{ sportif.poste | title }}</h5>
+									<p class="card-text">{{ sportif.nom }}
+										{{ sportif.prenom }}</p>
+								</div>
+							</div>
+						</div>
+						{# FIN PARTIE CARD #}
+
+						{# PARTIE PROFIL INFORMATION #}
+						<div class="col-12 col-xl-9 bg-light">
+							<p>jdlkfjdlfjl</p>
+						</div>
+						{# FIN DE PARTIE PROFIL INFORMATION #}
+
+
+					</div>
+					{# FIN DEUXIEME LIGNE DE ROW #}
+
+				</div>
+				{# FIN - CONTAINER-FLUIDE #}
+
+			</div>
+			<!-- FIN CONTENU-2 PRINCIPAL CENTRAL -->
+
+
+		</div>
+		<!-- FN PREMIERE DIV ROW  -->
+
+
+	</div>
+
+{% endblock %}

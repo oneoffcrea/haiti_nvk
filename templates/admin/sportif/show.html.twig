@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administrateur | Haiti Sport Network
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div
+			class="row g-2">
+			<!-- Navigation -->
+			<div class="col-md-6 col-xl-2 col-sm-12 align-items-start justify-content-center flex-column">
+				{% include "admin/_include/nav.html.twig" %}
+			</div>
+
+			<!-- Contenu principal -->
+			<div class="col-md-6 col-xl-10 col-sm-12 ">
+
+				<div class="row mb-2">
+
+					{% include "admin/sportif/_include/nav.html.twig" %}
+				</div>
+
+
+				<div class="row">
+					<div class="col-md-12 col-xl-12 col-sm-12">
+
+						<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+
+							{% for allUser in formSportif %}
+								<div class="col mb-2">
+									<div class="card">
+
+										<img src="{{ asset('/assets/img/photo_sportif/' ~ allUser.photo) }}">
+										<div class="card-header bg-dark text-white">
+											Profil :
+											{{ allUser.nom }}
+										</div>
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item">
+												Email :
+												{{ allUser.poste }}
+											</li>
+
+											<li class="list-group-item">
+												Nom :
+												{{ allUser.nom }}
+											</li>
+											<li class="list-group-item">
+												Prenom :
+												{{ allUser.prenom }}
+											</li>
+										</ul>
+
+										<div class="card-body d-flex gap-2">
+											<a href="{{ path('app_admin_sportif_profil', { id: allUser.id }) }}" class="btn btn-dark flex-fill">
+												Voir profil
+											</a>
+
+											<a href="#" class="btn btn-light border-1 flex-fill">
+												Supprimer
+											</a>
+										</div>
+
+									</div>
+								</div>
+							{% endfor %}
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+
+
+	</div>
+</div>{% endblock %}
