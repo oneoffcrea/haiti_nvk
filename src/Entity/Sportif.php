@@ -47,7 +47,7 @@ class Sportif
     private ?string $poste = null;
 
     #[ORM\ManyToOne(inversedBy: 'sportifs')]
-    private ?club $club = null;
+    private ?Club $club = null;
 
     #[ORM\Column(length: 255)]
     private ?string $photo = null;
