@@ -190,7 +190,7 @@ class Sportif
         return $this->club;
     }
 
-    public function setClub(?club $club): static
+    public function setClub(?Club $club): static
     {
         $this->club = $club;
 
