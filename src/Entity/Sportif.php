@@ -19,7 +19,7 @@ class Sportif
     /**
      * @var Collection<int, categories>
      */
-    #[ORM\ManyToMany(targetEntity: categories::class, inversedBy: 'sportifs')]
+    #[ORM\ManyToMany(targetEntity: Categories::class, inversedBy: 'sportifs')]
     private Collection $categorie;
 
     #[ORM\Column(length: 255)]
