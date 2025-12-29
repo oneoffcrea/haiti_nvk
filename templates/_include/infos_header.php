@@ -1,4 +1,4 @@
-<div class="col  infos_header_nvk py-2 d-none d-md-flex align-items-center justify-content-between text-center text-md-start w-100">
+<div class="col infos_header_nvk py-2 d-none d-md-flex align-items-center justify-content-between text-center text-md-start w-100">
 
     <!-- Réseaux sociaux -->
     <div class="d-flex gap-3">

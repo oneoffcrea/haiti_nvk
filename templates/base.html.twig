@@ -26,9 +26,14 @@
 
 
 	<body class="container-fluid">
+
+		<div class="row header">
+			{% include "_include/infos_header.php" %}
+
+		</div>
 		<header class="row bg-dark">
 			<div class="container">
-				{% include "_include/infos_header.php" %}
+
 				{% include "_include/nav-principal.php" %}
 				{% include "_include/connexion_header.php" %}
 			</div>
@@ -38,7 +43,7 @@
 			<div class="slide_nvk"> {% block slide %}{% endblock %}
 				</div>
 
-				<section class="container-fluid bg mb-5"> {% block body %}{% endblock %}
+				<section class="container-fluid  mb-5"> {% block body %}{% endblock %}
 					</section>
 				</main>
 

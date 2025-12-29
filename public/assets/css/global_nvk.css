@@ -22,6 +22,10 @@ body {
     overflow-x: hidden;
 }
 
+section {
+    background-color: white;
+}
+
 
 /* liens généraux */
 a {

@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container justify-content-md-center mt-5">
+		<h1 class="p-5 display-6 text-bg-dark">Accès refusé</h1>
+		<p class="display-6">Vous n'avez pas les droits pour voir cette page.
+			<a href="{{ path('app_home') }}">Retour à l'accueil</a>
+		</p>
+	</div>
+{% endblock %}
