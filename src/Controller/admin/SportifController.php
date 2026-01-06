@@ -103,7 +103,6 @@ final class SportifController extends AbstractController
     public function show(SportifRepository $sportifRepository): Response
     {
 
-
         $sportifAll = $sportifRepository->findAll();
 
         return $this->render('admin/sportif/show.html.twig', [

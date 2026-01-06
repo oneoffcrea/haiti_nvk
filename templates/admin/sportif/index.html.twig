@@ -1,24 +1,17 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/index.html.twig' %}
 
-{% block title %}Administrateur | Haiti Sport Network
+{% block title %}Administrateur | Haiti Sport Network - Sportif
 {% endblock %}
 
-{% block body %}
-	<div
-		class="container">
-		{# PREMIER LIGNE ROW #}
+{% block contenu_admin %}
+	{# DEBUT DE CONTAINER #}
+	<div class="container">
+
 		<div
-			class="row g-2">
-
-			{# COLONNE - CONTENU NAVIGATION  #}
-			<div class="col-md-6 col-xl-2 col-sm-12 align-items-start justify-content-center flex-column">
-				{% include "admin/_include/nav.html.twig" %}
-			</div>
-
-			{# COLONNE - 2  CONTENU PRINCIAPAL #}
+			class="row">
+			{# COLONNE - 1  CONTENU PRINCIPAL #}
 			<div
-				class="col-md-6 col-xl-10 col-sm-12 ">
-
+				class="col-md-12 col-xl-12 col-sm-12 ">
 				{# PREMIER LIGNE - NAVBAR #}
 				<div class="row mb-2">
 					{% include "admin/sportif/_include/nav.html.twig" %}
@@ -177,13 +170,14 @@
 					</div>
 
 				</div>
+
 			</div>
+			{# FIN COLONNE - 1 CONTENU PRINCIPALE #}
 
 		</div>
-		{# FIN COLONNE CONTENU PRINCIPALE #}
+		{# FIN ROW PRINCIPALE #}
 
 
 	</div>
-	{# FIN PREMIERE LIGNE ROW #}
-
-</div></div></div>{% endblock %}
+	{# FIN DE CONTAINER #}
+{% endblock %}

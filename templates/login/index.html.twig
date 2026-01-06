@@ -3,43 +3,40 @@
 {% block body %}
 
 	<div class="container mt-5">
-		<div class="row justify-content-center">
-			<div class="col-md-8 text-center">
 
+
+		<div class="row justify-content-center bg-light ">
+			<div class="col-md-6 bg-secondary rounded p-3">
 				<div class="jumbotron jumbotron-fluid">
-					<div class="container">
-						<h1 class="display-4">Connexion Administrateur</h1>
+					<div class="container text-center ">
+						<h1 class="fs-2 text-white">Connexion Administrateur</h1>
 						<p class="lead">Vous devez vous connecter pour administrer</p>
 					</div>
 				</div>
-			</div>
 
-		</div>
+				<div class="col-md-6 justify-content-center rounded p-3">
 
+					{% if error %}
+						<div class="alert alert-danger">
+							{{ error.messageKey|trans(error.messageData, 'security') }}
+						</div>
+					{% endif %}
 
-		<div class="row justify-content-center">
-			<div class="col-md-4 bg-secondary rounded p-3">
+					<form action="{{ path('app_login') }}" method="post">
 
-				{% if error %}
-					<div class="alert alert-danger">
-						{{ error.messageKey|trans(error.messageData, 'security') }}
-					</div>
-				{% endif %}
+						<div class="mb-3">
+							<label for="username" class="form-label">Email :</label>
+							<input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" required>
+						</div>
 
-				<form action="{{ path('app_login') }}" method="post">
+						<div class="mb-3">
+							<label for="password" class="form-label">Password :</label>
+							<input type="password" id="password" name="_password" class="form-control" required>
+						</div>
 
-					<div class="mb-3">
-						<label for="username" class="form-label">Email :</label>
-						<input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" required>
-					</div>
-
-					<div class="mb-3">
-						<label for="password" class="form-label">Password :</label>
-						<input type="password" id="password" name="_password" class="form-control" required>
-					</div>
-
-					<button type="submit" class="btn btn-dark w-25">Connexion</button>
-				</form>
+						<button type="submit" class="btn btn-dark w-50">Connexion</button>
+					</form>
+				</div>
 
 			</div>
 		</div>

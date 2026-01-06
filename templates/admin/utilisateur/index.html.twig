@@ -1,38 +1,36 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/index.html.twig' %}
 
 {% block title %}Administrateur | Haiti Sport Network
 {% endblock %}
 
-{% block body %}
+{% block contenu_admin %}
 	<div class="container">
 		<div
 			class="row g-2">
-			<!-- Navigation -->
-			<div class="col-md-6 col-xl-2 col-sm-12 align-items-start justify-content-center flex-column">
-				{% include "admin/_include/nav.html.twig" %}
-			</div>
-
 			<!-- Contenu principal -->
-			<div class="col-md-6 col-xl-10 col-sm-12 ">
+			<div class="col-md-12 col-xl-12 col-sm-12 mb-5">
 
 				<div class="row mb-2">
-
 					{% include "admin/utilisateur/_include/nav.html.twig" %}
 				</div>
 
 
 				<div class="row">
 
-					<div class="col-md-6 col-xl-6 col-sm-12">
-
-						{% for label, messages in app.flashes %}
-							{% for message in messages %}
-								<div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
-									{{ message }}
-									<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-								</div>
-							{% endfor %}
+					{% for label, messages in app.flashes %}
+						{% for message in messages %}
+							<div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+								{{ message }}
+								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+							</div>
 						{% endfor %}
+					{% endfor %}
+
+
+					<div class="col-md-6 col-xl-6 col-sm-12">
+						<div class="fs-5 p-2 text-center bg-black mb-2">
+							Créer un utilisateur
+						</div>
 
 						<div class="bg-secondary p-3 rounded">
 
@@ -86,22 +84,39 @@
 
 						<div class="row g-2 my-2 profil">
 
-							{% for Alluser in Allusers %}
+							<div class="fs-5 p-2 text-center bg-black">
+								Créer une catégorie
+							</div>
+							<div class="bg-secondary p-3 rounded">
+
+								{{ form_start(formCat) }}
+								{{ form_errors(formCat) }}
+								{{ form_label(formCat.categories, null, {'label_attr': {'class': 'form-label text-white'}}) }}
+								{{ form_widget(formCat.categories, {'attr': {'class': 'form-control'}}) }}
+								{{ form_rest(formCat) }}
+								<button type="submit" class="btn btn-dark w-50 mt-3">Ajouter</button>
+								{{ form_end(formCat) }}
+							</div>
+
+							<div class="fs-5 p-2 text-center bg-black">
+								Vos Catégorie
+							</div>
+							{% for cat in cateAll %}
 								<div class="col-md-6">
 									<div class="card">
-										<div class="card-header bg-dark text-white">
-											Profil :
-											{{ Alluser.nom }}
+										<div class="card-header bg-dark text-white text-center">
+											Catgeorie
 										</div>
 										<ul class="list-group list-group-flush">
-											<li class="list-group-item">
-												Email :
-												{{ Alluser.email }}
+											<li class="list-group-item text-center">
+
+												{{ cat.categories }}
 											</li>
 										</ul>
 									</div>
 								</div>
 							{% endfor %}
+							#
 
 						</div>
 

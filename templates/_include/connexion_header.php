@@ -1,14 +1,14 @@
-   <div class="col bg-dark">
-       <div class="m-2 d-flex gap-2 flex-fill d-md-none">
+   <div class="col">
+       <div class="d-md-none">
 
            {% if is_granted('ROLE_ADMIN') %}
            {# Utilisateur admin connecté #}
-           <a class="btn" style="background-color: #2a2828ff; color: white;" href="{{ path('app_admin') }}">Profil Admin</a>
-           <a class="btn" style="background-color: #c3b4b4ff; color: white;" href="{{ path('app_logout') }}">Se déconnecter</a>
+           <a class="btn" style="background-color: #ffffffff; color: black;" href="{{ path('app_admin') }}">Profil Admin</a>
+           <a class="btn" style="background-color: #000000ff; color: white;" href="{{ path('app_logout') }}">Se déconnecter</a>
 
            {% elseif app.user is not null %}
            {# Utilisateur normal connecté #}
-           <a class="btn" style="background-color: #dc3545; color: white;" href="{{ path('app_logout') }}">Se déconnecter</a>
+           <a class="btn" style="background-color: #000000ff; color: white;" href="{{ path('app_logout') }}">Se déconnecter</a>
 
            {% else %}
            {# Aucun utilisateur connecté #}

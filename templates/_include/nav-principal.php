@@ -1,5 +1,5 @@
-<div class="col bg-body">
-    <nav class="navbar navbar-expand-lg py-3 shadow-sm navbar-dark bg-dark">
+<div class="col-md-12">
+    <nav class="navbar navbar-expand-lg py-3 shadow-sm">
         <div class="container">
 
             <!-- LOGO + NOM DU SITE -->

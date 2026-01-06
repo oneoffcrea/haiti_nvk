@@ -1,19 +1,17 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/index.html.twig' %}
 
-{% block title %}Administrateur - Sportif | Haiti Sport Network
+{% block title %}Administrateur | Haiti Sport Network - Sportif
 {% endblock %}
 
-{% block body %}
-	<div
-		class="container">
-		<!-- PREMIERE DIV ROW  -->
-		<div
-			class="row g-2 mb-5">
+{% block contenu_admin %}
+	{# DEBUT DE CONTAINER #}
+	<div class="container">
 
+		<div class="row">
+			{# COLONNE - 1  CONTENU PRINCIPAL #}
 
 			<!-- CONTENU-1 NAVIGATION -->
-			<div class="col-md-5 col-xl-2 col-sm-12 align-items-start justify-content-center flex-column">
-				{% include "admin/_include/nav.html.twig" %}
+				<div class="col-md-5 col-xl-2 col-sm-12 align-items-start justify-content-center flex-column"> {% include "admin/_include/nav.html.twig" %}
 			</div>
 			<!-- CONTENU-1 NAVIGATION -->
 

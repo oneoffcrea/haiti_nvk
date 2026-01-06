@@ -1,22 +1,27 @@
-<div class="col infos_header_nvk py-2 d-none d-md-flex align-items-center justify-content-between text-center text-md-start w-100">
+<div class="row">
+    <div class="col">
+        <div class="row pt-2 pb-3">
 
-    <!-- Réseaux sociaux -->
-    <div class="d-flex gap-3">
-        <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
-        <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
-    </div>
+            <!-- Réseaux sociaux -->
+            <div class="col-2 d-flex justify-content-between">
+                <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+                <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+            </div>
 
-    <!-- Slogan -->
-    <div class="slogan_nvk text-center">
-        Haiti Sport Network – Le sport, notre passion 🇭🇹🔥
-    </div>
+            <!-- Slogan -->
+            <div class="col-4">
+                Haiti Sport Network – Le sport, notre passion 🇭🇹🔥
+            </div>
 
-    <!-- Contact -->
-    <div class="d-flex gap-3">
-        <div><i class="bi bi-telephone"></i> +509 45 67 89 10</div>
-        <div><i class="bi bi-envelope"></i> contact@haitisportnetwork.com</div>
+            <!-- Contact -->
+            <div class="col-5 d-flex justify-content-between">
+                <div><i class="bi bi-telephone"></i> +509 45 67 89 10</div>
+                <div><i class="bi bi-envelope"></i> contact@haitisportnetwork.com</div>
+            </div>
+        </div>
+
     </div>
 
 </div>

@@ -2,8 +2,11 @@
 
 namespace App\Controller\admin;
 
+use App\Entity\Categories;
 use App\Entity\User;
+use App\Form\CategorieType;
 use App\Form\UserType;
+use App\Repository\CategoriesRepository;
 use App\Repository\UserRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
@@ -18,48 +21,55 @@ final class UtilisateurController extends AbstractController
 
 
     #[Route('/admin/utilisateur', name: 'app_admin_utilisateur')]
-    public function index(Request $request, EntityManagerInterface $entityManager, UserRepository $userRepository): Response
+    public function index(Request $request, EntityManagerInterface $entityManager, UserRepository $userRepository, CategoriesRepository $catego): Response
     {
-        $user = new User();
-        $form = $this->createForm(UserType::class, $user);
-        $form->handleRequest($request);
         $data = new DateTimeImmutable();
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        // ===== FORMULAIRE UTILISATEUR (GAUCHE) =====
+        $user = new User();
+        $formUserAd = $this->createForm(UserType::class, $user);  // ← Nom DISTINCT
+        $formUserAd->handleRequest($request);
 
-            $us = $form->getData();
+        if ($formUserAd->isSubmitted() && $formUserAd->isValid()) {
+            $us = $formUserAd->getData();
             $infos = $us->getNom();
-
             $existe = $userRepository->findOneBy(['nom' => $infos]);
 
             if (!$existe) {
-
-
                 $user->setRole('ROLE_USER');
                 $user->setDateCreation($data);
-
                 $entityManager->persist($user);
                 $entityManager->flush();
-
-                $this->addFlash('success', ' Creation d\'un nouvelle utilisateur');
-                // return $this->redirectToRoute('app_admin_utilisateur');
-
+                $this->addFlash('success', 'Nouvel utilisateur créé !');
             } else {
-
-                $this->addFlash('warning', 'Cette utilisateur exite déja');
+                $this->addFlash('warning', 'Cet utilisateur existe déjà');
             }
         }
 
+        // ===== FORMULAIRE CATÉGORIE (DROITE) =====
+        $cat = new Categories();
+        $formCat = $this->createForm(CategorieType::class, $cat);  // ← Nom DISTINCT
+        $formCat->handleRequest($request);
+
+        if ($formCat->isSubmitted() && $formCat->isValid()) {
+            $entityManager->persist($cat);
+            $entityManager->flush();
+            $this->addFlash('success', 'Catégorie créée !');
+        }
 
         $allUser = $userRepository->findAll();
+        $catAll = $catego->findAll();
 
 
 
         return $this->render('admin/utilisateur/index.html.twig', [
-            'formUserAd' => $form->createView(),
-            'Allusers' => $allUser
+            'formUserAd' => $formUserAd->createView(),  // ← Formulaire User
+            'formCat'    => $formCat->createView(),     // ← Formulaire Catégorie
+            'Allusers'   => $allUser,
+            'cateAll'    => $catAll
         ]);
     }
+
 
 
 
